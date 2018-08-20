@@ -8,6 +8,10 @@
     <artifactId>google-cloud-datastore-example</artifactId>
     <version>1.0.0</version>
 
+    <name>Google Cloud Datastore Example</name>
+    <description>This is an example project for google-cloud-datastore util.</description>
+    <url>http://github.com/leCandas/google-cloud-datastore-util</url>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -22,7 +26,7 @@
 
         <google-cloud-bom.version>0.55.1-alpha</google-cloud-bom.version>
         <spring-boot-bom.version>2.0.2.RELEASE</spring-boot-bom.version>
-        <google-cloud-datastore-util.version>SNAPSHOT</google-cloud-datastore-util.version>
+        <google-cloud-datastore-util.version>1.0.1</google-cloud-datastore-util.version>
         <lombok.version>1.16.22</lombok.version>
     </properties>
 

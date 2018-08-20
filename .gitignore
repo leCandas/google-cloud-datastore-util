@@ -1,6 +1,6 @@
 # Created by https://www.gitignore.io/api/osx,java,macos,maven,windows,eclipse,intellij
 
-docker/service-tests/init-secrets.sh
+release/
 
 ### Eclipse ###
 

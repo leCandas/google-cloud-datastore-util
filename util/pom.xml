@@ -6,8 +6,12 @@
 
     <groupId>com.kramphub</groupId>
     <artifactId>google-cloud-datastore-util</artifactId>
-    <version>SNAPSHOT</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
+
+    <name>Google Cloud Datastore Util</name>
+    <description>This is a helper library for google-cloud-datastore. </description>
+    <url>http://github.com/leCandas/google-cloud-datastore-util</url>
 
     <properties>
         <java.version>1.8</java.version>
@@ -19,6 +23,7 @@
 
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
         <maven-surefire-plugin.version>2.21.0</maven-surefire-plugin.version>
+        <javadoc.opts>-Xdoclint:none</javadoc.opts>
     </properties>
 
     <dependencyManagement>
@@ -49,6 +54,33 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <additionalJOption>${javadoc.opts}</additionalJOption>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
