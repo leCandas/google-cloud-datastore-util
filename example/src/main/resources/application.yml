@@ -1,0 +1,6 @@
+# Default profile
+gcp:
+  project-id: kramp-hub
+  datastore:
+    namespace: example
+    max-query-limit: 1000

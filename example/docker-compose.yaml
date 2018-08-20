@@ -1,0 +1,25 @@
+version: "3.5"
+services:
+  example:
+    build: .
+    ports:
+    - "8080:8080"
+    depends_on:
+    - datastore
+    environment:
+    - SPRING_PROFILES_ACTIVE=test
+    - GOOGLE_APPLICATION_CREDENTIALS=/secrets/serviceaccount.json
+    - DATASTORE_EMULATOR_HOST=http://datastore:8081
+    - DATASTORE_EMULATOR_HOST_PATH=http://datastore:8081/datastore
+    - DATASTORE_HOST=http://datastore:8081
+    - DATASTORE_PROJECT_ID=kramp-hub
+    - STORE_DATASET=kramp-hub
+    volumes:
+    - ./docker/secrets/serviceaccount.json:/secrets/serviceaccount.json:ro
+  datastore:
+    image: "gcr.io/kramphub-toolshed-shared/docker-cloud-datastore-emulator:v1.0.0"
+    ports:
+    - "9081:8081"
+    environment:
+    - PORT=8081
+    - PROJECT=kramp-hub
